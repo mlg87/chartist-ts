@@ -2,7 +2,6 @@ import * as React from 'react';
 import './App.css';
 
 /* To get absolute paths: https://github.com/wmonk/create-react-app-typescript/issues/122 */
-// import { Chart } from 'components';
 import { Chart } from './components';
 
 import logo from './logo.svg';
