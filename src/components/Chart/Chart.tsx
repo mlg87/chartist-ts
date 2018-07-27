@@ -6,22 +6,23 @@ import ChartistGraph from 'react-chartist';
 
 import './Chart.css';
 
+export interface IDataPoint {
+    meta: string;
+    value: number;
+}
+
+export interface ISeries {
+    className?: string;
+    data: IDataPoint[];
+    name: string;
+}
+
 export interface IProps {
     data: {
-        labels: [string];
-        series: [
-            {
-                name: string;
-                data: [
-                    {
-                        value: number;
-                        meta: string;
-                    }
-                ];
-            }
-        ];
+        labels: string[];
+        series: ISeries[];
     };
-    type: string;
+    type?: string;
 }
 
 const options = {

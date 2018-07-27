@@ -1,0 +1,103 @@
+@import 'node_modules/chartist/dist/scss/chartist';
+@import 'node_modules/chartist/dist/scss/settings/_chartist-settings';
+@import 'node_modules/chartist-plugin-tooltips/dist/chartist-plugin-tooltip';
+
+$brand-color: #4a86e5;
+$dark-blue: #3c4f72;
+
+$ct-series-colors: ($brand-color, $dark-blue);
+
+$grey-3: #e2e2e2;
+
+.ct-chart {
+    height: 100%;
+}
+
+.he-chart {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    .ct-grid.ct-vertical {
+        stroke-dasharray: none;
+    }
+
+    .ct-bar {
+        stroke-width: 25px;
+    }
+
+    .chartist-tooltip {
+        background-color: white;
+        border: 1px solid $grey-3;
+        border-radius: 2px;
+
+        &::before {
+            border-top-color: $grey-3;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -14px;
+            border: 14px solid transparent;
+            border-top-color: white;
+        }
+
+        .chartist-tooltip-meta {
+            font-weight: normal;
+        }
+    }
+
+    .ct-legend {
+        position: relative;
+        z-index: 10;
+        list-style: none;
+        text-align: center;
+
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        li:before {
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            content: '';
+            border: 3px solid transparent;
+            border-radius: 2px;
+        }
+
+        li.inactive:before {
+            background: transparent;
+        }
+
+        &.ct-legend-inside {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        @for $i from 0 to length($ct-series-colors) {
+            .ct-series-#{$i}:before {
+                background-color: nth($ct-series-colors, $i + 1);
+                border-color: nth($ct-series-colors, $i + 1);
+            }
+        }
+    }
+
+    .brand-bar {
+        stroke: $brand-color;
+    }
+
+    .dark-bar {
+        stroke: $dark-blue;
+    }
+}
