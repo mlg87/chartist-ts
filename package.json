@@ -3,6 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@antv/data-set": "^0.8.9",
+        "bizcharts": "^3.1.10",
         "chartist": "^0.11.0",
         "chartist-plugin-legend": "^0.6.2",
         "chartist-plugin-tooltips": "^0.0.17",
