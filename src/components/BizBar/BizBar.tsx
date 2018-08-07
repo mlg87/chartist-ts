@@ -97,16 +97,16 @@ function Chart() {
       <Legend />
       <Tooltip crosshairs={{ type: "y" }} />
       <Geom
-        type="intervalDodge"
+        type="interval"
         position="timeperiod*occurances"
         color={["name", [colorBrand, colorBlue]]}
         adjust={[
           {
             marginRatio: 1 / 32,
-            type: "intervalDodge"
+            type: "dodge"
           }
         ]}
-        size={30} // adjust width of bar
+        // size={30} // adjust width of bar
         opacity={1}
       />
     </BizChart>

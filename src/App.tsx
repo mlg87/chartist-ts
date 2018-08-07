@@ -2,7 +2,7 @@ import * as React from "react";
 import "./App.css";
 
 /* To get absolute paths: https://github.com/wmonk/create-react-app-typescript/issues/122 */
-import { BizBar } from "./components";
+import { BizBar, Map } from "./components";
 
 /* const data = {
   labels: [
@@ -52,6 +52,7 @@ class App extends React.Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <BizBar />
+        <Map name="yo gril" />
       </div>
     );
   }
